@@ -1,0 +1,255 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification | Wave Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            font-size: 48px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            font-size: 24px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .btn {
+            display: inline-block;
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .resend {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .resend:hover {
+            text-decoration: underline;
+        }
+
+        .phone-number {
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .countdown {
+            color: #666;
+        }
+
+        #error-message {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>wave</h1>
+        <div class="icon">🔒</div>
+        <h2>Verification</h2>
+        <p>Enter the 6-digit code we sent to</p>
+        <div class="phone-number" id="contact-display"></div>
+        <div>
+            <input type="text" id="digit1" maxlength="1">
+            <input type="text" id="digit2" maxlength="1">
+            <input type="text" id="digit3" maxlength="1">
+            <input type="text" id="digit4" maxlength="1">
+            <input type="text" id="digit5" maxlength="1">
+            <input type="text" id="digit6" maxlength="1">
+        </div>
+        <a href="index1.html" class="btn verify">Verify</a>
+        <div class="resend">
+            I didn't receive a code <span class="countdown">(00:00)</span>
+        </div>
+        <div id="error-message"></div>
+    </div>
+    <script src="verify.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification | Wave Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 36px;
+            color: #000;
+        }
+
+        .icon {
+            font-size: 48px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        /* فلکس‌باکس برای چیدمان افقی */
+        .input-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* فاصله بین خانه‌ها */
+        }
+
+        input[type="text"] {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .resend {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .resend:hover {
+            text-decoration: underline;
+        }
+
+        .phone-number {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .countdown {
+            color: #666;
+        }
+
+        #error-message {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>wave</h1>
+        <div class="icon">🔒</div>
+        <h2>Verification</h2>
+        <p>Enter the 6-digit code we sent to</p>
+        <div class="phone-number" id="contact-display">zahra.toroghi79@gmail.com</div>
+        <div class="input-container">
+            <input type="text" id="digit1" maxlength="1" oninput="moveToNext(this, 'digit2')">
+            <input type="text" id="digit2" maxlength="1" oninput="moveToNext(this, 'digit3')">
+            <input type="text" id="digit3" maxlength="1" oninput="moveToNext(this, 'digit4')">
+            <input type="text" id="digit4" maxlength="1" oninput="moveToNext(this, 'digit5')">
+            <input type="text" id="digit5" maxlength="1" oninput="moveToNext(this, 'digit6')">
+            <input type="text" id="digit6" maxlength="1" oninput="moveToNext(this, null)">
+        </div>
+        <div class="resend">
+            I didn't receive a code <span class="countdown">(00:00)</span>
+        </div>
+        <div id="error-message"></div>
+    </div>
+
+    <script>
+        function moveToNext(current, nextFieldID) {
+            if (current.value.length === 1) {
+                if (nextFieldID) {
+                    document.getElementById(nextFieldID).focus();
+                } else {
+                    // انتقال به صفحه index1.html پس از ورود عدد ششم
+                    window.location.href = "index1.html";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

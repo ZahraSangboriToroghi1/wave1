@@ -1,0 +1,474 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-top-left {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-right: 20px;
+}
+
+.header-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.header-nav ul li {
+    margin-right: 20px;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+.header-top-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-top-right .profile-box {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #0073e6;
+}
+
+.header-top-right img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-banner img {
+    width: 80%;
+    max-width: 450px;
+    height: 250px;
+    border-radius: 8px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.center-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-top: -60px; /* Adjust as necessary */
+}
+
+.user-info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 22px;
+}
+
+.user-info span {
+    color: #666;
+}
+
+.edit-profile {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 200px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.edit-profile:hover {
+    background-color: #005bb5;
+}
+
+
+
+footer {
+    background-color: #f9f9f9;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.footer-left ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-left ul li {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.footer-right a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.header-nav a {
+    color: inherit;
+}
+
+.header-nav a.dark-mode {
+    color: #ffffff;
+}
+
+.footer-left,
+.footer-right {
+    background-color: inherit;
+}
+
+.footer-left.dark-mode,
+.footer-right.dark-mode {
+    background-color: #333333;
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+.edit-profile-modal {
+    width: 600px;
+    max-height: 300px; /* Limit height for scroll */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0;
+    display: none; /* Initially hidden */
+    overflow-y: auto; /* Enable vertical scroll */
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.edit-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+}
+
+.edit-option img {
+    width: 10px;
+    height: 10px;
+    margin-right: 16px;
+}
+
+.edit-option span {
+    font-size: 16px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.edit-option.pro::after {
+    content: 'PRO';
+    color: #fff;
+    background-color: #007bff;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: auto;
+    font-size: 12px;
+}
+
+
+
+
+.edit-profile-modal, .modal {
+    width: 400px;
+    max-height: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0;
+    display: none;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.modal-header, .modal-content {
+    padding: 16px;
+}
+
+.modal-header h2, .modal-content h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.edit-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+}
+
+.edit-option img {
+    width: 10px;
+    height: 10px;
+    margin-right: 16px;
+}
+
+.edit-option span {
+    font-size: 16px;
+}
+
+.close-btn, .close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.edit-option.pro::after {
+    content: 'PRO';
+    color: #fff;
+    background-color: #007bff;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: auto;
+    font-size: 12px;
+}
+
+
+.no-content-image{
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+/* استایل مدال شبکه‌های اجتماعی */
+/* ////////////////////////////////////////////////////////////////// */
+
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+/* ///////////////////// */
+.modal input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+}
+/* ////////////// */
+.modal input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+#socialLinks {
+    margin-bottom: 15px;
+}
+
+#socialLinks p {
+    font-size: 14px;
+    color: #999;
+}
+
+.modal button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* استایل مدال برای بخش Gallery */
+#galleryPreview {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.no-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+
+#linkList {
+    margin-bottom: 15px;
+}
+
+#linkList p {
+    font-size: 14px;
+    color: #999;
+}

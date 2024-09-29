@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="settings">Settings Page</title>
+    <link rel="stylesheet" href="styles5.css">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">wave</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html" data-lang="profile">Profile</a></li>
+                    <li><a href="index8.html" data-lang="contacts">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link" data-lang="analytics">Analytics</a></li>
+                    <li><a href="index11.html" data-lang="settings">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box" data-lang="shareProfile">Share your profile</div>
+            <div class="profile-box" data-lang="contactUs">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <div class="settings-container">
+            <h1 data-lang="settings">Settings</h1>
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#" class="active" data-lang="account">Account</a></li>
+                    <li><a href="sharing.html" data-lang="sharing">Sharing</a></li>
+                    <li><a href="inte.html" data-lang="integrations">Integrations</a></li>
+                    <li><a href="#" data-lang="billing">Billing</a></li>
+                    <li><a href="pro.html" data-lang="products">Products</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <section class="account-section">
+                    <h2 data-lang="account">Account</h2>
+                    <form id="account-form">
+                        <div class="form-group">
+                            <label for="first-name" data-lang="firstName">First name</label>
+                            <input type="text" id="first-name" name="first-name" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name" data-lang="lastName">Last name</label>
+                            <input type="text" id="last-name" name="last-name" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-lang="accountEmail">Account Email</label>
+                            <input type="email" id="email" name="email" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-lang="accountPhone">Account Phone</label>
+                            <input type="text" id="phone" name="phone" placeholder="Your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="language" data-lang="language">Language</label>
+                            <select id="language" name="language">
+                                <option value="english" selected>English</option>
+                                <option value="arabic">Arabic</option>
+                                <option value="farsi">Farsi</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="light-mode" data-lang="lightMode">Light Mode</label>
+                            <input type="checkbox" id="light-mode" name="light-mode">
+                        </div>
+                        <button type="submit" data-lang="saveChanges">Save changes</button>
+                    </form>
+                </section>
+                <section class="connected-accounts-section">
+                    <h2 data-lang="connectedAccounts">Connected Accounts</h2>
+                    <p data-lang="connectedAccountsDesc">Connect your Wave account with a third-party service to use it for login</p>
+                    <div class="connected-account">
+                        <span>Google</span>
+                        <button type="button" class="connect-account" data-lang="connect">Connect</button>
+                    </div>
+                    <div class="connected-account">
+                        <span>Apple</span>
+                        <button type="button" class="connect-account" data-lang="connect">Connect</button>
+                    </div>
+                    <div class="connected-account">
+                        <span>SSO</span>
+                        <button type="button" class="connect-account" data-lang="connect">Connect</button>
+                    </div>
+                </section>
+                <section class="delete-account-section">
+                    <h2 data-lang="deleteAccount">Delete Account</h2>
+                    <p data-lang="deleteAccountDesc">Note that deleting your account will also delete any organizations in which you are the only member</p>
+                    <button type="button" class="delete-account" data-lang="delete">Delete</button>
+                </section>
+            </div>
+        </div>
+    </main>    
+
+    <footer>
+        <div class="footer-left">
+            wave
+            <ul>
+                <li data-lang="shopProducts">Shop Products</li>
+                <li data-lang="pricing">Pricing</li>
+                <li data-lang="faq">FAQ</li>
+                <li onclick="showLegalDetails()" data-lang="legals">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li data-lang="termsOfUse">Terms of Use</li>
+                    <li data-lang="privacyPolicy">Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('light-mode').addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            } else {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('language');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedLanguage) {
+                applyLanguage(savedLanguage);
+            }
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            }
+
+            // Load saved account information
+            const savedFirstName = localStorage.getItem('firstName');
+            const savedLastName = localStorage.getItem('lastName');
+            const savedEmail = localStorage.getItem('email');
+            const savedPhone = localStorage.getItem('phone');
+
+            if (savedFirstName) document.getElementById('first-name').value = savedFirstName;
+            if (savedLastName) document.getElementById('last-name').value = savedLastName;
+            if (savedEmail) document.getElementById('email').value = savedEmail;
+            if (savedPhone) document.getElementById('phone').value = savedPhone;
+
+            document.getElementById('account-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const firstName = document.getElementById('first-name').value;
+                const lastName = document.getElementById('last-name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+
+                localStorage.setItem('firstName', firstName);
+                localStorage.setItem('lastName', lastName);
+                localStorage.setItem('email', email);
+                localStorage.setItem('phone', phone);
+
+                alert('Changes saved!');
+            });
+        });
+
+        function applyLanguage(language) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const translationKey = el.getAttribute('data-lang');
+                if (translations[language] && translations[language][translationKey]) {
+                    el.textContent = translations[language][translationKey];
+                }
+            });
+        }
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        const translations = {
+            english: {
+                profile: 'Profile',
+                contacts: 'Contacts',
+                analytics: 'Analytics',
+                settings: 'Settings',
+                shareProfile: 'Share your profile',
+                contactUs: 'Contact Us',
+                choosePlan: 'Choose Your Plan',
+                unlockExperience: 'Unlock the full networking experience with upgrade features',
+                monthly: 'Monthly',
+                annually: 'Annually',
+                discount: '17% discount',
+                whatsIncluded: 'What’s included',
+                crmIntegrations: 'CRM Integrations',
+                realTimeAnalytics: 'Real-Time Analytics',
+                calendarIntegration: 'Calendar Integration',
+                accessProContent: 'Access to Pro Content',
+                showcaseTeam: 'Showcase Your Team',
+                contactSales: 'Contact sales to discuss Enterprise plans',
+                cancelAnytime: 'Cancel anytime. Price in USD',
+                shopProducts: 'Shop Products',
+                pricing: 'Pricing',
+                faq: 'FAQ',
+                legals: 'Legals',
+                termsOfUse: 'Terms of Use',
+                privacyPolicy: 'Privacy Policy',
+                firstName: 'First name',
+                lastName: 'Last name',
+                accountEmail: 'Account Email',
+                accountPhone: 'Account Phone',
+                darkMode: 'Dark Mode',
+                language: 'Language',
+                saveChanges: 'Save changes',
+                editProfile: 'Edit Profile',
+                pageViews: 'Page Views',
+                pageClicks: 'Page Clicks',
+                ctr: 'CTR',
+                contactsCollected: 'Contacts Collected'
+            },
+            arabic: {
+                profile: 'الملف الشخصي',
+                contacts: 'جهات الاتصال',
+                analytics: 'التحليلات',
+                settings: 'الإعدادات',
+                shareProfile: 'شارك ملفك الشخصي',
+                contactUs: 'اتصل بنا',
+                choosePlan: 'اختر خطتك',
+                unlockExperience: 'افتح تجربة الشبكات الكاملة بميزات الترقية',
+                monthly: 'شهرياً',
+                annually: 'سنوياً',
+                discount: 'خصم 17%',
+                whatsIncluded: 'ما هو مشمول',
+                crmIntegrations: 'تكاملات CRM',
+                realTimeAnalytics: 'التحليلات في الوقت الحقيقي',
+                calendarIntegration: 'تكامل التقويم',
+                accessProContent: 'الوصول إلى المحتوى الاحترافي',
+                showcaseTeam: 'عرض فريقك',
+                contactSales: 'اتصل بالمبيعات لمناقشة خطط الشركات',
+                cancelAnytime: 'إلغاء في أي وقت. السعر بالدولار الأمريكي',
+                shopProducts: 'تسوق المنتجات',
+                pricing: 'التسعير',
+                faq: 'الأسئلة الشائعة',
+                legals: 'الوثائق القانونية',
+                termsOfUse: 'شروط الاستخدام',
+                privacyPolicy: 'سياسة الخصوصية',
+                firstName: 'الاسم الأول',
+                lastName: 'الاسم الأخير',
+                accountEmail: 'البريد الإلكتروني للحساب',
+                accountPhone: 'هاتف الحساب',
+                darkMode: 'الوضع الداكن',
+                language: 'اللغة',
+                saveChanges: 'حفظ التغييرات',
+                editProfile: 'تعديل الملف الشخصي',
+                pageViews: 'مشاهدات الصفحة',
+                pageClicks: 'نقرات الصفحة',
+                ctr: 'نسبة النقر إلى الظهور',
+                contactsCollected: 'جهات الاتصال التي تم جمعها'
+            },
+            farsi: {
+                profile: 'نمایه',
+                contacts: 'مخاطبین',
+                analytics: 'تجزیه و تحلیل',
+                settings: 'تنظیمات',
+                shareProfile: 'اشتراک گذاری نمایه شما',
+                contactUs: 'تماس با ما',
+                choosePlan: 'طرح خود را انتخاب کنید',
+                unlockExperience: 'با ویژگی‌های ارتقا تجربه کامل شبکه‌سازی را باز کنید',
+                monthly: 'ماهانه',
+                annually: 'سالانه',
+                discount: '17٪ تخفیف',
+                whatsIncluded: 'چه چیزی شامل است',
+                crmIntegrations: 'ادغام‌های CRM',
+                realTimeAnalytics: 'تجزیه و تحلیل در زمان واقعی',
+                calendarIntegration: 'ادغام تقویم',
+                accessProContent: 'دسترسی به محتوای حرفه‌ای',
+                showcaseTeam: 'نمایش تیم شما',
+                contactSales: 'برای بحث در مورد برنامه‌های سازمانی با فروش تماس بگیرید',
+                cancelAnytime: 'لغو در هر زمان. قیمت به دلار آمریکا',
+                shopProducts: 'خرید محصولات',
+                pricing: 'قیمت گذاری',
+                faq: 'سوالات متداول',
+                legals: 'قوانین',
+                termsOfUse: 'شرایط استفاده',
+                privacyPolicy: 'سیاست حفظ حریم خصوصی',
+                firstName: 'نام',
+                lastName: 'نام خانوادگی',
+                accountEmail: 'ایمیل حساب کاربری',
+                accountPhone: 'تلفن حساب کاربری',
+                darkMode: 'حالت تاریک',
+                language: 'زبان',
+                saveChanges: 'ذخیره تغییرات',
+                editProfile: 'ویرایش نمایه',
+                pageViews: 'مشاهدات صفحه',
+                pageClicks: 'کلیک‌های صفحه',
+                ctr: 'نرخ کلیک',
+                contactsCollected: 'مخاطبین جمع آوری شده'
+            }
+        };
+    </script>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html>

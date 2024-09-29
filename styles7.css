@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #7c7575b9;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-top-left {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.header-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.header-nav ul li {
+    margin-right: 10px;
+}
+
+.header-top-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-top-right .profile-box {
+    margin-left: 10px;
+}
+
+.header-top-right img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.profile-box {
+    background-color: #2412c4;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.plan-container {
+    width: 80%;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.plan-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.plan-option {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+
+.plan-option input {
+    display: none;
+}
+
+.plan-option label {
+    display: block;
+    cursor: pointer;
+}
+
+.plan-option h2 {
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.plan-option p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.plan-option button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.plan-option button:hover {
+    background-color: #0056b3;
+}
+
+.plan-details {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: left;
+}
+
+.plan-details h3 {
+    margin: 0 0 10px 0;
+}
+
+.plan-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-details ul li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.plan-details ul li::before {
+    content: "✔";
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.plan-footer {
+    margin-top: 20px;
+}
+
+.plan-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.plan-footer a:hover {
+    text-decoration: underline;
+}
+
+.plan-footer p {
+    margin-top: 10px;
+    color: #bbb;
+}
+
+footer {
+    background-color: #555151;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-left ul, .footer-right {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-left ul li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.footer-right img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+
+
+/* Add these styles to make the social media icons smaller */
+.footer-right a img {
+    width: 24px;  /* Adjust the size to your preference */
+    height: 24px; /* Adjust the size to your preference */
+    margin: 0 5px; /* Optional: add some space between the icons */
+}
+
+
+.header-top-right img, .center-image {
+    width: 40px; /* اندازه کوچک */
+    height: 40px; /* اندازه کوچک */
+    border-radius: 50%; /* دایره‌ای کردن تصویر */
+    object-fit: cover;
+}
+
+
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Example of other dark mode adjustments */
+.header-nav a {
+    color: inherit;
+}
+
+.header-nav a.dark-mode {
+    color: #ffffff;
+}
+
+.footer-left,
+.footer-right {
+    background-color: inherit;
+}
+
+.footer-left.dark-mode,
+.footer-right.dark-mode {
+    background-color: #333333;
+}
+
+
+
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}

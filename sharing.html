@@ -1,0 +1,555 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Wave Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+        .form-group .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .form-group .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .form-group .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        .form-group input:checked + .slider {
+            background-color: #2196F3;
+        }
+        .form-group input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+        .btn-save {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-save:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="styles5.css">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">wave</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html">Profile</a></li>
+                    <li><a href="index8.html">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link">Analytics</a></li>
+                    <li><a href="index11.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box">Share your profile</div>
+            <div class="profile-box">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="sidebar">
+                <a href="index11.html">Account</a>
+                <a href="#" class="active">Sharing</a>
+                <a href="inte.html">Integrations</a>
+                <a href="#">Billing</a>
+                <a href="pro.html">Products</a>
+            </div>
+            <div class="main-content">
+                <div class="card">
+                    <h2>Lead form</h2>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Enabled
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Send a follow-up email
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Send a follow-up SMS
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Fields</label>
+                        <input type="checkbox" checked> Email
+                        <input type="checkbox" checked> Phone
+                    </div>
+                    <div class="form-group">
+                        <label>Disclaimer message</label>
+                        <input type="text">
+                    </div>
+                    <a href="#" class="btn-save">Save changes</a>
+                </div>
+                <div class="card">
+                    <h2>Contact Info</h2>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Enabled
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox">
+                            Automatically download contact info
+                        </label>
+                    </div>
+                    <a href="#" class="btn-save">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </main>    
+
+    <footer>
+        <div class="footer-left">
+            wave
+            <ul>
+                <li>Shop Products</li>
+                <li>Pricing</li>
+                <li>FAQ</li>
+                <li onclick="showLegalDetails()">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li>Terms of Use</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        function showLegalDetails() {
+            const legalDetails = document.getElementById('legal-details');
+            if (legalDetails.style.display === 'none') {
+                legalDetails.style.display = 'block';
+            } else {
+                legalDetails.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Wave Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        /* کانتینر و سایدبار */
+        .container {
+            display: flex;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            padding-top: 20px;
+        }
+        
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .sidebar a.active {
+            background-color: #e0e0e0;
+            font-weight: bold;
+        }
+        
+        /* محتوای اصلی */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f4f6f9;
+        }
+        
+        /* کارت‌ها */
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            max-width: 600px; /* عرض کارت‌ها */
+        }
+        
+        .card h2 {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* گروه‌های فرمی */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        /* سوئیچ */
+        .form-group .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+        
+        .form-group .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .form-group .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+        
+        .form-group .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+        
+        .form-group input:checked + .slider {
+            background-color: #2196F3;
+        }
+        
+        .form-group input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+        
+        /* دکمه‌ها */
+        .btn-save {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .btn-save:hover {
+            background-color: #0056b3;
+        }
+        
+        /* فوتر */
+        footer {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-left ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-left ul li {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .footer-right a img {
+            width: 24px;
+            margin-left: 10px;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="styles5.css">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">wave</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html">Profile</a></li>
+                    <li><a href="index8.html">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link">Analytics</a></li>
+                    <li><a href="index11.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box">Share your profile</div>
+            <div class="profile-box">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="sidebar">
+                <a href="index11.html">Account</a>
+                <a href="#" class="active">Sharing</a>
+                <a href="inte.html">Integrations</a>
+                <a href="#">Billing</a>
+                <a href="pro.html">Products</a>
+            </div>
+            <div class="main-content">
+                <div class="card">
+                    <h2>Lead form</h2>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Enabled
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Send a follow-up email
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Send a follow-up SMS
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Fields</label>
+                        <input type="checkbox" checked> Email
+                        <input type="checkbox" checked> Phone
+                    </div>
+                    <div class="form-group">
+                        <label>Disclaimer message</label>
+                        <input type="text">
+                    </div>
+                    <a href="#" class="btn-save">Save changes</a>
+                </div>
+                <div class="card">
+                    <h2>Contact Info</h2>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" checked>
+                            Enabled
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox">
+                            Automatically download contact info
+                        </label>
+                    </div>
+                    <a href="#" class="btn-save">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </main>    
+
+    <footer>
+        <div class="footer-left">
+            wave
+            <ul>
+                <li>Shop Products</li>
+                <li>Pricing</li>
+                <li>FAQ</li>
+                <li onclick="showLegalDetails()">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li>Terms of Use</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        function showLegalDetails() {
+            const legalDetails = document.getElementById('legal-details');
+            if (legalDetails.style.display === 'none') {
+                legalDetails.style.display = 'block';
+            } else {
+                legalDetails.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

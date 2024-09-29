@@ -1,0 +1,405 @@
+/* اصول پایه */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: black;
+    display: flex;
+    flex-direction: column; /* تغییر به column برای چیدمان عمودی */
+    justify-content: flex-start; /* شروع چیدمان از بالا */
+    align-items: center; /* مرکز کردن عناصر در محور افقی */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header {
+    background-color: #706b6b9d;
+    padding: 5px;
+    text-align: left;
+    width: 1340px; /* تنظیم عرض برای اشغال تمام عرض صفحه */
+}
+
+.header-top > span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-image {
+    text-align: right;
+}
+
+.profile-links .box {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: #eee;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #555151;
+    color: white;
+    padding: 5px;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-left, .footer-right {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.header-top-right {
+    text-align: right;
+}
+
+.center-image {
+    width: 300px;
+    height: 200px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100px;
+}
+
+.small-profile {
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 22px;
+}
+
+.user-info span {
+    color: #666;
+}
+
+.edit-profile {
+    display: block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.edit-profile:hover {
+    background-color: #0056b3;
+}
+
+.buttons, .btn, .continue-button {
+    margin-top: 10px;
+    padding: 4px 10px;
+    border: none;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 30px;
+    background-color: #007BFF; /* رنگ پیش فرض دکمه‌ها */
+}
+
+.btn:hover, .continue-button:hover {
+    opacity: 0.9;
+    background-color: #e0e5eb;
+}
+
+.form-field {
+    margin: 20px 0;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-field input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-field input:invalid {
+    border-color: rgb(68, 0, 255);
+}
+
+.form-field input:valid {
+    border-color: green;
+}
+
+.required {
+    color: rgb(89, 0, 255);
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.progress-step {
+    width: 10px;
+    height: 5px;
+    background-color: #B3E0FF;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.progress-step-active {
+    width: 20px;
+    height: 10px; /* افزایش اندازه برای نمایش فعال */
+    background-color: #007BFF;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centers the text of all child elements */
+}
+
+/* Adding new CSS for the Contacts page layout */
+.main-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.main-top-left, .main-top-right {
+    flex: 1; /* Ensures that both the left and right sections take up equal space */
+    padding: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.boxes {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.box {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 150px; /* Adjusted width to accommodate longer texts */
+    text-align: center;
+    background-color: #f0f0f0; /* Adding a background color for better visibility */
+}
+
+.blue-box {
+    background-color: #007BFF;
+    color: white;
+}
+
+.contact-add {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-add img {
+    width: 50px;
+    height: 50px;
+}
+
+.contact-add strong {
+    display: block;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.contact-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-options .box {
+    width: 200px; /* Wider boxes for contact options */
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-options .box:hover {
+    background-color: #0056b3;
+}
+
+/* Adding new CSS for the Analytics page layout */
+.analytics-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.analytics-top-left, .analytics-top-right {
+    flex: 1; /* Ensures that both the left and right sections take up equal space */
+    padding: 10px;
+}
+
+
+.analytics-screenshot{
+    width: 350px;
+    height: inherit;
+}
+.analytics-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.analytics-boxes {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.analytics-box {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 150px; /* Adjusted width to accommodate longer texts */
+    text-align: center;
+    background-color: #f0f0f0; /* Adding a background color for better visibility */
+}
+
+.analytics-add {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.analytics-add img {
+    width: 50px;
+    height: 50px;
+}
+
+.analytics-add strong {
+    display: block;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.analytics-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.analytics-options .box {
+    width: 200px; /* Wider boxes for contact options */
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.analytics-options .box:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .main-top, .analytics-top {
+        flex-direction: column;
+    }
+
+    .boxes, .contact-options, .analytics-boxes, .analytics-options {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px 0; /* More space between boxes */
+    }
+}
+
+/* Add these styles to make the social media icons smaller */
+.footer-right a img {
+    width: 24px;  /* Adjust the size to your preference */
+    height: 24px; /* Adjust the size to your preference */
+    margin: 0 5px; /* Optional: add some space between the icons */
+}
+
+
+.header-top-right img, .center-image {
+    width: 40px; /* اندازه کوچک */
+    height: 40px; /* اندازه کوچک */
+    border-radius: 50%; /* دایره‌ای کردن تصویر */
+    object-fit: cover;
+}
+
+
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Example of other dark mode adjustments */
+.header-nav a {
+    color: inherit;
+}
+
+.header-nav a.dark-mode {
+    color: #ffffff;
+}
+
+.footer-left,
+.footer-right {
+    background-color: inherit;
+}
+
+.footer-left.dark-mode,
+.footer-right.dark-mode {
+    background-color: #333333;
+}
+
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}

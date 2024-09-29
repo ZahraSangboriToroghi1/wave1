@@ -1,0 +1,122 @@
+<!-- <!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Profile Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <h1>Upload Profile Image</h1>
+        <p>Here you will be able to upload your profile image.</p>
+        <div class="upload-box">
+            <input type="file" id="profileImage" name="profileImage" accept="image/*">
+            <img id="imagePreview" src="" alt="Image preview..." style="max-width: 200px; height: auto; display: none;">
+        </div>
+        <div class="buttons">
+            <button class="btn continue-button-3">Continue</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Profile Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <h1>Upload Profile Image</h1>
+        <p>Here you will be able to upload your profile image.</p>
+        <div class="upload-box">
+            <input type="file" id="profileImage" name="profileImage" accept="image/*">
+            <img id="imagePreview" src="" alt="Image preview..." style="max-width: 200px; height: auto; display: none;">
+        </div>
+        <div class="buttons">
+            <button class="btn continue-button-3">Continue</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Profile Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <h1>Upload Profile Image</h1>
+        <p>Here you will be able to upload your profile image.</p>
+        <div class="upload-box">
+            <input type="file" id="profileImage" name="profileImage" accept="image/*">
+            <img id="imagePreview" src="" alt="Image preview..." style="max-width: 200px; height: auto; display: none;">
+        </div>
+        <div class="buttons">
+            <button class="btn continue-button-3">Continue</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('profileImage').addEventListener('change', function() {
+            const file = this.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').src = e.target.result;
+                document.getElementById('imagePreview').style.display = 'block';
+                localStorage.setItem('profileImage', e.target.result);
+            };
+            reader.readAsDataURL(file);
+        });
+        
+        document.querySelector('.continue-button-3').addEventListener('click', function() {
+            if (!document.getElementById('profileImage').files.length) {
+                alert('Please upload an image.');
+            } else {
+                window.location.href = 'index7.html';
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

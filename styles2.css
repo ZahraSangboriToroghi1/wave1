@@ -1,0 +1,417 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-top-left {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin-right: 20px;
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.header-nav ul li {
+    margin-right: 20px;
+}
+
+.header-nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-top-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile-box {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-top-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-top-left h1 {
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px;
+    margin-right: 10px;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.blue-btn {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid #ccc;
+}
+
+.dropdown-content .dropdown-item {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content .dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-add .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.contact-options .btn {
+    margin-top: 10px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-left ul li {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.footer-right a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+}
+
+#legal-details {
+    margin-top: 10px;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.header-nav a {
+    color: inherit;
+}
+
+.header-nav a.dark-mode {
+    color: #ffffff;
+}
+
+.footer-left,
+.footer-right {
+    background-color: inherit;
+}
+
+.footer-left.dark-mode,
+.footer-right.dark-mode {
+    background-color: #333333;
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+
+
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.modal h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modal button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+
+/* استایل برای لیست مخاطبین */
+/* بخش میانی که شامل لیست مخاطبین است */
+.main-center {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* کارت‌ها را به صورت کامل در عرض قرار می‌دهد */
+}
+
+/* استایل برای هر کارت مخاطب */
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 100%; /* کارت تمام عرض قسمت میانی را پر می‌کند */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* اطمینان از اینکه padding محاسبه شده است */
+}
+
+/* بخش سمت چپ کارت */
+.contact-left {
+    text-align: left;
+    width: 50%; /* نیمی از عرض برای سمت چپ */
+}
+
+/* بخش سمت راست کارت */
+.contact-right {
+    text-align: right;
+    width: 50%; /* نیمی از عرض برای سمت راست */
+}
+
+.contact-item strong {
+    font-size: 18px;
+    color: #333;
+}
+
+.contact-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+.modal-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+#drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#drop-area img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+#continueButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+#continueButton.enabled {
+    cursor: pointer;
+    background-color: #007bff;
+}
+
+#continueButton:disabled {
+    background-color: #cccccc;
+}

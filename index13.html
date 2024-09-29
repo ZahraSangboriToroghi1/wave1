@@ -1,0 +1,345 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Plan</title>
+    <link rel="stylesheet" href="styles7.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">WA</div>
+            <nav class="header-nav">
+                <ul>
+                    <li>Profile</li>
+                    <li>Contacts</li>
+                    <li>Analytics</li>
+                    <li>Settings</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box">Profile</div>
+            <div class="profile-box">Share your profile</div>
+            <div class="profile-box">Contact Us</div>
+            <img src="profile_picture.jpg" alt="Profile">
+        </div>
+    </header>
+
+    <main>
+        <div class="plan-container">
+            <h1>Choose your plan</h1>
+            <p>Unlock the full networking experience with upgrade features</p>
+            <div class="plan-options">
+                <div class="plan-option">
+                    <input type="radio" id="monthly" name="plan" checked>
+                    <label for="monthly">
+                        <h2>Monthly</h2>
+                        <p>US$4.99 /month</p>
+                        <button>Get Started</button>
+                    </label>
+                </div>
+                <div class="plan-option">
+                    <input type="radio" id="annually" name="plan">
+                    <label for="annually">
+                        <h2>Annually <span class="discount">17% discount</span></h2>
+                        <p>US$49.99 /year</p>
+                        <button>Get Started</button>
+                    </label>
+                </div>
+                <div class="plan-details">
+                    <h3>What’s included</h3>
+                    <ul>
+                        <li>CRM Integrations</li>
+                        <li>Real-Time Analytics</li>
+                        <li>Calendar Integration</li>
+                        <li>Access to Pro Content</li>
+                        <li>Showcase Your Team</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plan-footer">
+                <a href="#">Contact sales to discuss Enterprise plans</a>
+                <p>Cancel anytime. Price in USD</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            WA
+            <ul>
+                <li>Shop Products</li>
+                <li>Pricing</li>
+                <li>FAQ</li>
+                <li onclick="showLegalDetails()">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li>Terms of Use</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="choosePlan">Choose Your Plan</title>
+    <link rel="stylesheet" href="styles7.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">WA</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html" data-lang="profile">Profile</a></li>
+                    <li><a href="index8.html" data-lang="contacts">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link" data-lang="analytics">Analytics</a></li>
+                    <li><a href="index11.html" data-lang="settings">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box" data-lang="shareProfile">Share your profile</div>
+            <div class="profile-box" data-lang="contactUs">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile">
+        </div>
+    </header>
+
+    <main>
+        <div class="plan-container">
+            <h1 data-lang="choosePlan">Choose your plan</h1>
+            <p data-lang="unlockExperience">Unlock the full networking experience with upgrade features</p>
+            <div class="plan-options">
+                <div class="plan-option">
+                    <input type="radio" id="monthly" name="plan" checked>
+                    <label for="monthly">
+                        <h2 data-lang="monthly">Monthly</h2>
+                        <p>US$4.99 /month</p>
+                        <button data-lang="getStarted">Get Started</button>
+                    </label>
+                </div>
+                <div class="plan-option">
+                    <input type="radio" id="annually" name="plan">
+                    <label for="annually">
+                        <h2 data-lang="annually">Annually <span class="discount" data-lang="discount">17% discount</span></h2>
+                        <p>US$49.99 /year</p>
+                        <button data-lang="getStarted">Get Started</button>
+                    </label>
+                </div>
+                <div class="plan-details">
+                    <h3 data-lang="whatsIncluded">What’s included</h3>
+                    <ul>
+                        <li data-lang="crmIntegrations">CRM Integrations</li>
+                        <li data-lang="realTimeAnalytics">Real-Time Analytics</li>
+                        <li data-lang="calendarIntegration">Calendar Integration</li>
+                        <li data-lang="accessProContent">Access to Pro Content</li>
+                        <li data-lang="showcaseTeam">Showcase Your Team</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plan-footer">
+                <a href="#" data-lang="contactSales">Contact sales to discuss Enterprise plans</a>
+                <p data-lang="cancelAnytime">Cancel anytime. Price in USD</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            WA
+            <ul>
+                <li data-lang="shopProducts">Shop Products</li>
+                <li data-lang="pricing">Pricing</li>
+                <li data-lang="faq">FAQ</li>
+                <li onclick="showLegalDetails()" data-lang="legals">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li data-lang="termsOfUse">Terms of Use</li>
+                    <li data-lang="privacyPolicy">Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('language');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedLanguage) {
+                applyLanguage(savedLanguage);
+            }
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            }
+        });
+    
+        function applyLanguage(language) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const translationKey = el.getAttribute('data-lang');
+                if (translations[language] && translations[language][translationKey]) {
+                    el.textContent = translations[language][translationKey];
+                }
+            });
+        }
+    
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+        }
+    
+        const translations = {
+            english: {
+                profile: 'Profile',
+                contacts: 'Contacts',
+                analytics: 'Analytics',
+                settings: 'Settings',
+                shareProfile: 'Share your profile',
+                contactUs: 'Contact Us',
+                choosePlan: 'Choose Your Plan',
+                unlockExperience: 'Unlock the full networking experience with upgrade features',
+                monthly: 'Monthly',
+                annually: 'Annually',
+                discount: '17% discount',
+                whatsIncluded: 'What’s included',
+                crmIntegrations: 'CRM Integrations',
+                realTimeAnalytics: 'Real-Time Analytics',
+                calendarIntegration: 'Calendar Integration',
+                accessProContent: 'Access to Pro Content',
+                showcaseTeam: 'Showcase Your Team',
+                contactSales: 'Contact sales to discuss Enterprise plans',
+                cancelAnytime: 'Cancel anytime. Price in USD',
+                shopProducts: 'Shop Products',
+                pricing: 'Pricing',
+                faq: 'FAQ',
+                legals: 'Legals',
+                termsOfUse: 'Terms of Use',
+                privacyPolicy: 'Privacy Policy',
+                firstName: 'First name',
+                lastName: 'Last name',
+                accountEmail: 'Account Email',
+                accountPhone: 'Account Phone',
+                darkMode: 'Dark Mode',
+                language: 'Language',
+                saveChanges: 'Save changes',
+                editProfile: 'Edit Profile',
+                pageViews: 'Page Views',
+                pageClicks: 'Page Clicks',
+                ctr: 'CTR',
+                contactsCollected: 'Contacts Collected'
+            },
+            arabic: {
+                profile: 'الملف الشخصي',
+                contacts: 'جهات الاتصال',
+                analytics: 'التحليلات',
+                settings: 'الإعدادات',
+                shareProfile: 'شارك ملفك الشخصي',
+                contactUs: 'اتصل بنا',
+                choosePlan: 'اختر خطتك',
+                unlockExperience: 'افتح تجربة الشبكات الكاملة بميزات الترقية',
+                monthly: 'شهرياً',
+                annually: 'سنوياً',
+                discount: 'خصم 17%',
+                whatsIncluded: 'ما هو مشمول',
+                crmIntegrations: 'تكاملات CRM',
+                realTimeAnalytics: 'التحليلات في الوقت الحقيقي',
+                calendarIntegration: 'تكامل التقويم',
+                accessProContent: 'الوصول إلى المحتوى الاحترافي',
+                showcaseTeam: 'عرض فريقك',
+                contactSales: 'اتصل بالمبيعات لمناقشة خطط الشركات',
+                cancelAnytime: 'إلغاء في أي وقت. السعر بالدولار الأمريكي',
+                shopProducts: 'تسوق المنتجات',
+                pricing: 'التسعير',
+                faq: 'الأسئلة الشائعة',
+                legals: 'الوثائق القانونية',
+                termsOfUse: 'شروط الاستخدام',
+                privacyPolicy: 'سياسة الخصوصية',
+                firstName: 'الاسم الأول',
+                lastName: 'الاسم الأخير',
+                accountEmail: 'البريد الإلكتروني للحساب',
+                accountPhone: 'هاتف الحساب',
+                darkMode: 'الوضع الداكن',
+                language: 'اللغة',
+                saveChanges: 'حفظ التغييرات',
+                editProfile: 'تعديل الملف الشخصي',
+                pageViews: 'مشاهدات الصفحة',
+                pageClicks: 'نقرات الصفحة',
+                ctr: 'نسبة النقر إلى الظهور',
+                contactsCollected: 'جهات الاتصال التي تم جمعها'
+            },
+            farsi: {
+                profile: 'نمایه',
+                contacts: 'مخاطبین',
+                analytics: 'تجزیه و تحلیل',
+                settings: 'تنظیمات',
+                shareProfile: 'اشتراک گذاری نمایه شما',
+                contactUs: 'تماس با ما',
+                choosePlan: 'طرح خود را انتخاب کنید',
+                unlockExperience: 'با ویژگی‌های ارتقا تجربه کامل شبکه‌سازی را باز کنید',
+                monthly: 'ماهانه',
+                annually: 'سالانه',
+                discount: '17٪ تخفیف',
+                whatsIncluded: 'چه چیزی شامل است',
+                crmIntegrations: 'ادغام‌های CRM',
+                realTimeAnalytics: 'تجزیه و تحلیل در زمان واقعی',
+                calendarIntegration: 'ادغام تقویم',
+                accessProContent: 'دسترسی به محتوای حرفه‌ای',
+                showcaseTeam: 'نمایش تیم شما',
+                contactSales: 'برای بحث در مورد برنامه‌های سازمانی با فروش تماس بگیرید',
+                cancelAnytime: 'لغو در هر زمان. قیمت به دلار آمریکا',
+                shopProducts: 'خرید محصولات',
+                pricing: 'قیمت گذاری',
+                faq: 'سوالات متداول',
+                legals: 'قوانین',
+                termsOfUse: 'شرایط استفاده',
+                privacyPolicy: 'سیاست حفظ حریم خصوصی',
+                firstName: 'نام',
+                lastName: 'نام خانوادگی',
+                accountEmail: 'ایمیل حساب کاربری',
+                accountPhone: 'تلفن حساب کاربری',
+                darkMode: 'حالت تاریک',
+                language: 'زبان',
+                saveChanges: 'ذخیره تغییرات',
+                editProfile: 'ویرایش نمایه',
+                pageViews: 'مشاهدات صفحه',
+                pageClicks: 'کلیک‌های صفحه',
+                ctr: 'نرخ کلیک',
+                contactsCollected: 'مخاطبین جمع آوری شده'
+            }
+        };
+    </script>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html>

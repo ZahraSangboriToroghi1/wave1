@@ -1,0 +1,106 @@
+<!-- <!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <h1>Create your Account</h1>
+        <p class="subheading">Tell us more about you</p>
+        <form id="signupForm">
+            <div class="form-field">
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div class="form-field">
+                <label for="lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" required>
+            </div>
+            <div class="form-field">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" required>
+            </div>
+            <button type="submit" class="btn continue-1">Continue</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <h1>Create your Account</h1>
+        <p class="subheading">Tell us more about you</p>
+        <form id="signupForm">
+            <div class="form-field">
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div class="form-field">
+                <label for="lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" required>
+            </div>
+            <div class="form-field">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" required>
+            </div>
+            <button type="submit" class="btn continue-1">Continue</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phone = document.getElementById('phone').value;
+            
+            localStorage.setItem('firstName', firstName);
+            localStorage.setItem('lastName', lastName);
+            localStorage.setItem('phone', phone);
+            
+            window.location.href = 'index2.html';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

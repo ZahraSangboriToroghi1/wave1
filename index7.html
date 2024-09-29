@@ -1,0 +1,873 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">WA</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html">Profile</a></li>
+                    <li><a href="index8.html">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link">Analytics</a></li>
+                    <li><a href="index11.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box">Share your profile</div>
+            <div class="profile-box">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <div class="preview-title">Preview Profile</div>
+        <img src="no_background.webp" alt="No Background" class="center-image1">
+        <img id="profile-pic-main" src="no_background.webp" alt="Profile" class="center-image">
+        <div class="user-info">
+            <strong id="user-name">User Name Surname from Index1</strong>
+            <span id="occupation-location">Occupation and Location from Index2</span>
+        </div>
+        <button class="edit-profile" onclick="editProfile()">Edit Profile</button>
+        <img src="no_content.webp" alt="No Content" class="no-content-image">
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            WA
+            <ul>
+                <li>Shop Products</li>
+                <li>Pricing</li>
+                <li>FAQ</li>
+                <li onclick="showLegalDetails()">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li>Terms of Use</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const profileImage = localStorage.getItem('profileImage');
+            const userName = localStorage.getItem('userName');
+            const occupationLocation = localStorage.getItem('occupationLocation');
+
+            if (profileImage) {
+                document.getElementById("profile-pic-header").src = profileImage;
+                document.getElementById("profile-pic-main").src = profileImage;
+            }
+            if (userName) {
+                document.getElementById("user-name").innerText = userName;
+            } else {
+                document.getElementById("user-name").innerText = "User Name Surname from Index1";
+            }
+            if (occupationLocation) {
+                document.getElementById("occupation-location").innerText = occupationLocation;
+            } else {
+                document.getElementById("occupation-location").innerText = "Occupation and Location from Index2";
+            }
+        });
+
+        function editProfile() {
+            let newProfileImage = prompt("Enter new profile image URL:");
+            let newUserName = prompt("Enter new user name:");
+            let newOccupationLocation = prompt("Enter new occupation and location:");
+
+            if (newProfileImage) {
+                localStorage.setItem("profileImage", newProfileImage);
+                document.querySelector(".header-top-right img").src = newProfileImage;
+                document.querySelector("#profile-pic-main").src = newProfileImage;
+            }
+            if (newUserName) {
+                localStorage.setItem("userName", newUserName);
+                document.getElementById("user-name").innerText = newUserName;
+            }
+            if (newOccupationLocation) {
+                localStorage.setItem("occupationLocation", newOccupationLocation);
+                document.getElementById("occupation-location").innerText = newOccupationLocation;
+            }
+        }
+    </script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title data-lang="profile">Profile Page</title>
+     <link rel="stylesheet" href="styles1.css">
+ </head>
+ <body>
+     <header>
+         <div class="header-left">
+             <div class="header-top-left">wave</div>
+             <nav class="header-nav">
+                 <ul>
+                     <li><a href="index7.html" data-lang="profile">Profile</a></li>
+                     <li><a href="index8.html" data-lang="contacts">Contacts</a></li>
+                     <li><a href="index12.html" id="analytics-link" data-lang="analytics">Analytics</a></li>
+                     <li><a href="index11.html" data-lang="settings">Settings</a></li>
+                 </ul>
+             </nav>
+         </div>
+         <div class="header-top-right">
+             <div class="profile-box" data-lang="shareProfile">Share your profile</div>
+             <div class="profile-box" data-lang="contactUs">Contact Us</div>
+             <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile">
+         </div>
+     </header>
+ 
+     <main>
+         <div class="preview-title" data-lang="profile">Profile</div>
+         <div class="profile-banner">
+             <img src="no_background.webp" alt="No Background" class="center-image1">
+         </div>
+         <div class="profile-info">
+             <img id="profile-pic-main" src="no_background.webp" alt="Profile" class="center-image">
+             <div class="user-info">
+                 <strong id="user-name">Zahra Toroghi</strong>
+                 <span id="occupation-location">pnij/p | Tehran • fksf</span>
+             </div>
+             <a href="index1.html" class="edit-profile" data-lang="editProfile">Edit Profile</a>
+         </div>
+         <img src="no_content.webp" alt="No Content" class="no-content-image">
+         <p>It looks like you don't have any content</p>
+     </main>
+
+     <footer>
+         <div class="footer-left">
+             <span class="logo">wave</span>
+             <ul>
+                 <li data-lang="shopProducts">Shop Products</li>
+                 <li data-lang="pricing">Pricing</li>
+                 <li data-lang="faq">FAQ</li>
+                 <li onclick="showLegalDetails()" data-lang="legals">Legals</li>
+             </ul>
+             <div id="legal-details" style="display: none;">
+                 <ul>
+                     <li data-lang="termsOfUse">Terms of Use</li>
+                     <li data-lang="privacyPolicy">Privacy Policy</li>
+                 </ul>
+             </div>
+         </div>
+         <div class="footer-right">
+             <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+             <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+             <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+             <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+         </div>
+     </footer>
+ </body>
+ </html> -->
+ 
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">wave</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html" data-lang="profile">Profile</a></li>
+                    <li><a href="index8.html" data-lang="contacts">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link" data-lang="analytics">Analytics</a></li>
+                    <li><a href="index11.html" data-lang="settings">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box" data-lang="shareProfile">Share your profile</div>
+            <div class="profile-box" data-lang="contactUs">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <!-- <div class="preview-title" data-lang="profile">Profile</div> -->
+        <div class="preview-title" data-lang="profile">Profile</div>
+        <div class="profile-banner">
+            <img src="no_background.webp" alt="No Background" class="center-image1">
+        </div>
+        <div class="profile-info">
+            <img id="profile-pic-main" src="" alt="Profile" class="center-image">
+        </div> 
+        <div class="profile-info">
+            <strong id="user-name"></strong>
+            <span id="occupation-location"></span>
+        </div>
+        <a class="edit-profile" data-lang="editProfile">Edit Profile</a>
+        <img src="no_content.webp" alt="No Content" class="no-content-image">
+        <p>It looks like you don't have any content</p>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <span class="logo">wave</span>
+            <ul>
+                <li data-lang="shopProducts">Shop Products</li>
+                <li data-lang="pricing">Pricing</li>
+                <li data-lang="faq">FAQ</li>
+                <li onclick="showLegalDetails()" data-lang="legals">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li data-lang="termsOfUse">Terms of Use</li>
+                    <li data-lang="privacyPolicy">Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <div class="edit-profile-modal" id="editProfileModal">
+        <div class="modal-header">
+            <h2>Edit Profile</h2>
+            <button class="close-btn" id="closeBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="edit-option" data-target="contactInfoModal">
+                <img src="path/to/contact-icon.png" alt="Contact Info">
+                <span>Contact Info</span>
+            </div>
+            <div class="edit-option" data-target="aboutModal">
+                <img src="path/to/about-icon.png" alt="About">
+                <span>About</span>
+            </div>
+            <div class="edit-option" data-target="socialsModal">
+                <img src="path/to/socials-icon.png" alt="Socials">
+                <span>Socials</span>
+            </div>
+            <div class="edit-option" data-target="galleryModal">
+                <img src="path/to/gallery-icon.png" alt="Gallery">
+                <span>Gallery</span>
+            </div>
+            <div class="edit-option" data-target="linksModal">
+                <img src="path/to/links-icon.png" alt="Links">
+                <span>Links</span>
+            </div>
+            <div class="edit-option" data-target="backgroundImageModal">
+                <img src="path/to/background-image-icon.png" alt="Background Image">
+                <span>Background Image</span>
+            </div>
+            <div class="edit-option pro" data-target="googleMapsModal">
+                <img src="path/to/google-maps-icon.png" alt="Google Maps">
+                <span>Google Maps</span>
+            </div>
+            <div class="edit-option pro" data-target="videoModal">
+                <img src="path/to/video-icon.png" alt="Video">
+                <span>Video</span>
+            </div>
+            <div class="edit-option pro" data-target="teamsModal">
+                <img src="path/to/teams-icon.png" alt="Teams">
+                <span>Teams</span>
+            </div>
+            <div class="edit-option pro" data-target="filesModal">
+                <img src="path/to/files-icon.png" alt="Files">
+                <span>Files</span>
+            </div>
+            <div class="edit-option pro" data-target="typeformModal">
+                <img src="path/to/typeform-icon.png" alt="Typeform">
+                <span>Typeform</span>
+            </div>
+            <div class="edit-option pro" data-target="calendlyModal">
+                <img src="path/to/calendly-icon.png" alt="Calendly">
+                <span>Calendly</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for each section -->
+    <div class="modal" id="contactInfoModal">
+        <div class="modal-content">
+            <span class="close" data-close="contactInfoModal">&times;</span>
+            <h2>Contact Info</h2>
+            <form id="contactInfoForm">
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" name="jobTitle" value="machine learning"><br><br>
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" value="fksf"><br><br>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" value="Tehran"><br><br>
+                <label for="personalEmail">Personal Email:</label>
+                <input type="email" id="personalEmail" name="personalEmail"><br><br>
+                <label for="workEmail">Work Email:</label>
+                <input type="email" id="workEmail" name="workEmail"><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone"><br><br>
+                <label for="workPhone">Work Phone:</label>
+                <input type="tel" id="workPhone" name="workPhone"><br><br>
+                <button type="button" id="saveContactInfo">Save changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <span class="close" data-close="aboutModal">&times;</span>
+            <h2>About Me</h2>
+            <form id="aboutForm">
+                <label for="aboutTitle">Title (max 40 chars):</label>
+                <input type="text" id="aboutTitle" name="aboutTitle" maxlength="40"><br><br>
+                <label for="aboutBio">Bio (max 1500 chars):</label>
+                <textarea id="aboutBio" name="aboutBio" maxlength="1500"></textarea><br><br>
+                <button type="button" id="saveAbout">Save Changes</button>
+            </form>
+        </div>
+    </div>    
+    <div class="modal" id="socialsModal">
+        <div class="modal-content">
+            <span class="close" data-close="socialsModal">&times;</span>
+            <h2>Socials</h2>
+            <form id="socialsForm">
+                <label for="socialTitle">Title (max 40 chars):</label>
+                <input type="text" id="socialTitle" name="socialTitle" maxlength="40"><br><br>
+                
+                <label for="socialLinks">Socials:</label>
+                <div id="socialLinks">
+                    <p>No social links added yet.</p>
+                </div>
+                
+                <button type="button" id="addSocial">+ Add Social</button>
+                <button type="button" id="saveSocials">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <span class="close" data-close="galleryModal">&times;</span>
+            <h2>Images</h2>
+            <form id="galleryForm">
+                <label for="galleryTitle">Title:</label>
+                <input type="text" id="galleryTitle" name="galleryTitle" placeholder="Images" maxlength="40"><br><br>
+    
+                <div id="galleryPreview">
+                    <img src="no_image.png" alt="No Image" id="imagePreview" class="no-image">
+                </div>
+    
+                <label for="uploadImage">Add Images:</label>
+                <input type="file" id="uploadImage" accept="image/*"><br><br>
+    
+                <button type="button" id="saveGallery">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="linksModal">
+        <div class="modal-content">
+            <span class="close" data-close="linksModal">&times;</span>
+            <h2>Links</h2>
+            <form id="linksForm">
+                <label for="linkTitle">Title:</label>
+                <input type="text" id="linkTitle" name="linkTitle" placeholder="Links" maxlength="40"><br><br>
+                
+                <div id="linkList">
+                    <p>No link added yet.</p>
+                </div>
+    
+                <button type="button" id="addLink">+ Add Link</button><br><br>
+    
+                <button type="button" id="saveLinks">Save Changes</button>
+            </form>
+        </div>
+    </div>    
+    <div class="modal" id="backgroundImageModal">
+        <div class="modal-content">
+            <span class="close" data-close="backgroundImageModal">&times;</span>
+            <h2>Background Image</h2>
+            <form id="backgroundImageForm">
+                <label for="backgroundImage">Upload Background:</label>
+                <input type="file" id="backgroundImage" name="backgroundImage"><br><br>
+                <button type="button" id="saveBackgroundImage">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileImage = localStorage.getItem('profileImage');
+            const firstName = localStorage.getItem('firstName');
+            const lastName = localStorage.getItem('lastName');
+            const jobTitle = localStorage.getItem('jobTitle');
+            const company = localStorage.getItem('company');
+            const location = localStorage.getItem('location');
+            
+            if (profileImage) {
+                document.getElementById('profile-pic-main').src = profileImage;
+                document.getElementById('profile-pic-header').src = profileImage;
+            }
+            if (firstName && lastName) {
+                document.getElementById('user-name').innerText = `${firstName} ${lastName}`;
+            }
+            if (jobTitle && company && location) {
+                document.getElementById('occupation-location').innerText = `${jobTitle}, ${company}, ${location}`;
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('language');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedLanguage) {
+                applyLanguage(savedLanguage);
+            }
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            }
+
+            // Load stored data
+            const storedJobTitle = localStorage.getItem('jobTitle');
+            const storedCompany = localStorage.getItem('company');
+            const storedLocation = localStorage.getItem('location');
+            const storedPersonalEmail = localStorage.getItem('personalEmail');
+            const storedWorkEmail = localStorage.getItem('workEmail');
+            const storedPhone = localStorage.getItem('phone');
+            const storedWorkPhone = localStorage.getItem('workPhone');
+            const storedBackgroundImage = localStorage.getItem('backgroundImage');
+
+            if (storedJobTitle) document.getElementById('jobTitle').value = storedJobTitle;
+            if (storedCompany) document.getElementById('company').value = storedCompany;
+            if (storedLocation) document.getElementById('location').value = storedLocation;
+            if (storedPersonalEmail) document.getElementById('personalEmail').value = storedPersonalEmail;
+            if (storedWorkEmail) document.getElementById('workEmail').value = storedWorkEmail;
+            if (storedPhone) document.getElementById('phone').value = storedPhone;
+            if (storedWorkPhone) document.getElementById('workPhone').value = storedWorkPhone;
+            if (storedBackgroundImage) {
+                document.getElementById('profile-pic-main').src = storedBackgroundImage;
+                document.getElementById('profile-pic-header').src = storedBackgroundImage;
+            }
+        });
+    
+        function applyLanguage(language) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const translationKey = el.getAttribute('data-lang');
+                if (translations[language] && translations[language][translationKey]) {
+                    el.textContent = translations[language][translationKey];
+                }
+            });
+        }
+    
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+        }
+    
+        const translations = {
+            english: {
+                profile: 'Profile',
+                contacts: 'Contacts',
+                analytics: 'Analytics',
+                settings: 'Settings',
+                shareProfile: 'Share your profile',
+                contactUs: 'Contact Us',
+                choosePlan: 'Choose Your Plan',
+                unlockExperience: 'Unlock the full networking experience with upgrade features',
+                monthly: 'Monthly',
+                annually: 'Annually',
+                discount: '17% discount',
+                whatsIncluded: 'What’s included',
+                crmIntegrations: 'CRM Integrations',
+                realTimeAnalytics: 'Real-Time Analytics',
+                calendarIntegration: 'Calendar Integration',
+                accessProContent: 'Access to Pro Content',
+                showcaseTeam: 'Showcase Your Team',
+                contactSales: 'Contact sales to discuss Enterprise plans',
+                cancelAnytime: 'Cancel anytime. Price in USD',
+                shopProducts: 'Shop Products',
+                pricing: 'Pricing',
+                faq: 'FAQ',
+                legals: 'Legals',
+                termsOfUse: 'Terms of Use',
+                privacyPolicy: 'Privacy Policy',
+                firstName: 'First name',
+                lastName: 'Last name',
+                accountEmail: 'Account Email',
+                accountPhone: 'Account Phone',
+                darkMode: 'Dark Mode',
+                language: 'Language',
+                saveChanges: 'Save changes',
+                editProfile: 'Edit Profile',
+                pageViews: 'Page Views',
+                pageClicks: 'Page Clicks',
+                ctr: 'CTR',
+                contactsCollected: 'Contacts Collected'
+            },
+            arabic: {
+                profile: 'الملف الشخصي',
+                contacts: 'جهات الاتصال',
+                analytics: 'التحليلات',
+                settings: 'الإعدادات',
+                shareProfile: 'شارك ملفك الشخصي',
+                contactUs: 'اتصل بنا',
+                choosePlan: 'اختر خطتك',
+                unlockExperience: 'افتح تجربة الشبكات الكاملة بميزات الترقية',
+                monthly: 'شهرياً',
+                annually: 'سنوياً',
+                discount: 'خصم 17%',
+                whatsIncluded: 'ما هو مشمول',
+                crmIntegrations: 'تكاملات CRM',
+                realTimeAnalytics: 'التحليلات في الوقت الحقيقي',
+                calendarIntegration: 'تكامل التقويم',
+                accessProContent: 'الوصول إلى المحتوى الاحترافي',
+                showcaseTeam: 'عرض فريقك',
+                contactSales: 'اتصل بالمبيعات لمناقشة خطط الشركات',
+                cancelAnytime: 'إلغاء في أي وقت. السعر بالدولار الأمريكي',
+                shopProducts: 'تسوق المنتجات',
+                pricing: 'التسعير',
+                faq: 'الأسئلة الشائعة',
+                legals: 'الوثائق القانونية',
+                termsOfUse: 'شروط الاستخدام',
+                privacyPolicy: 'سياسة الخصوصية',
+                firstName: 'الاسم الأول',
+                lastName: 'الاسم الأخير',
+                accountEmail: 'البريد الإلكتروني للحساب',
+                accountPhone: 'هاتف الحساب',
+                darkMode: 'الوضع الداكن',
+                language: 'اللغة',
+                saveChanges: 'حفظ التغييرات',
+                editProfile: 'تعديل الملف الشخصي',
+                pageViews: 'مشاهدات الصفحة',
+                pageClicks: 'نقرات الصفحة',
+                ctr: 'نسبة النقر إلى الظهور',
+                contactsCollected: 'جهات الاتصال التي تم جمعها'
+            },
+            farsi: {
+                profile: 'نمایه',
+                contacts: 'مخاطبین',
+                analytics: 'تجزیه و تحلیل',
+                settings: 'تنظیمات',
+                shareProfile: 'اشتراک گذاری نمایه شما',
+                contactUs: 'تماس با ما',
+                choosePlan: 'طرح خود را انتخاب کنید',
+                unlockExperience: 'با ویژگی‌های ارتقا تجربه کامل شبکه‌سازی را باز کنید',
+                monthly: 'ماهانه',
+                annually: 'سالانه',
+                discount: '17٪ تخفیف',
+                whatsIncluded: 'چه چیزی شامل است',
+                crmIntegrations: 'ادغام‌های CRM',
+                realTimeAnalytics: 'تجزیه و تحلیل در زمان واقعی',
+                calendarIntegration: 'ادغام تقویم',
+                accessProContent: 'دسترسی به محتوای حرفه‌ای',
+                showcaseTeam: 'نمایش تیم شما',
+                contactSales: 'برای بحث در مورد برنامه‌های سازمانی با فروش تماس بگیرید',
+                cancelAnytime: 'لغو در هر زمان. قیمت به دلار آمریکا',
+                shopProducts: 'خرید محصولات',
+                pricing: 'قیمت گذاری',
+                faq: 'سوالات متداول',
+                legals: 'قوانین',
+                termsOfUse: 'شرایط استفاده',
+                privacyPolicy: 'سیاست حفظ حریم خصوصی',
+                firstName: 'نام',
+                lastName: 'نام خانوادگی',
+                accountEmail: 'ایمیل حساب کاربری',
+                accountPhone: 'تلفن حساب کاربری',
+                darkMode: 'حالت تاریک',
+                language: 'زبان',
+                saveChanges: 'ذخیره تغییرات',
+                editProfile: 'ویرایش نمایه',
+                pageViews: 'مشاهدات صفحه',
+                pageClicks: 'کلیک‌های صفحه',
+                ctr: 'نرخ کلیک',
+                contactsCollected: 'مخاطبین جمع آوری شده'
+            }
+        };
+
+        // مدیریت نمایش و بستن مدال‌ها
+        document.querySelector('.edit-profile').addEventListener('click', function() {
+            document.getElementById('editProfileModal').style.display = 'block';
+        });
+
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            document.getElementById('editProfileModal').style.display = 'none';
+        });
+
+        // Event listeners for opening and closing specific modals
+        document.querySelectorAll('.edit-option').forEach(function(option) {
+            option.addEventListener('click', function() {
+                const targetModalId = option.getAttribute('data-target');
+                const targetModal = document.getElementById(targetModalId);
+                if (targetModal) {
+                    document.getElementById('editProfileModal').style.display = 'none';
+                    targetModal.style.display = 'block';
+                }
+            });
+        });
+
+        document.querySelectorAll('.close').forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                const modalId = closeBtn.getAttribute('data-close');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Save Contact Info
+        document.getElementById('saveContactInfo').addEventListener('click', function() {
+            const jobTitle = document.getElementById('jobTitle').value;
+            const company = document.getElementById('company').value;
+            const location = document.getElementById('location').value;
+            const personalEmail = document.getElementById('personalEmail').value;
+            const workEmail = document.getElementById('workEmail').value;
+            const phone = document.getElementById('phone').value;
+            const workPhone = document.getElementById('workPhone').value;
+
+            localStorage.setItem('jobTitle', jobTitle);
+            localStorage.setItem('company', company);
+            localStorage.setItem('location', location);
+            localStorage.setItem('personalEmail', personalEmail);
+            localStorage.setItem('workEmail', workEmail);
+            localStorage.setItem('phone', phone);
+            localStorage.setItem('workPhone', workPhone);
+
+            document.getElementById('contactInfoModal').style.display = 'none';
+
+            // Update profile info on the main page
+            document.getElementById('occupation-location').innerText = `${jobTitle}, ${company}, ${location}`;
+        });
+
+        // Save Background Image
+        document.getElementById('saveBackgroundImage').addEventListener('click', function() {
+            const backgroundImage = document.getElementById('backgroundImage').files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                localStorage.setItem('backgroundImage', e.target.result);
+                document.getElementById('profile-pic-main').src = e.target.result;
+                document.getElementById('profile-pic-header').src = e.target.result;
+            };
+
+            if (backgroundImage) {
+                reader.readAsDataURL(backgroundImage);
+            }
+
+            document.getElementById('backgroundImageModal').style.display = 'none';
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load stored About Me data
+            const storedAboutTitle = localStorage.getItem('aboutTitle');
+            const storedAboutBio = localStorage.getItem('aboutBio');
+        
+            if (storedAboutTitle) document.getElementById('aboutTitle').value = storedAboutTitle;
+            if (storedAboutBio) document.getElementById('aboutBio').value = storedAboutBio;
+        });
+        
+        // Save About Me Info
+        document.getElementById('saveAbout').addEventListener('click', function() {
+            const aboutTitle = document.getElementById('aboutTitle').value;
+            const aboutBio = document.getElementById('aboutBio').value;
+        
+            localStorage.setItem('aboutTitle', aboutTitle);
+            localStorage.setItem('aboutBio', aboutBio);
+        
+            document.getElementById('aboutModal').style.display = 'none';
+        
+            // Update profile display with saved data
+            document.getElementById('profile-title').innerText = aboutTitle;
+            document.getElementById('profile-bio').innerText = aboutBio;
+        });
+        
+        // مدیریت نمایش و بستن مدال درباره من
+        document.querySelector('.edit-about').addEventListener('click', function() {
+            document.getElementById('aboutModal').style.display = 'block';
+        });
+        
+        document.querySelectorAll('.close').forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                const modalId = closeBtn.getAttribute('data-close');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+        
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const storedSocials = JSON.parse(localStorage.getItem('socialLinks')) || [];
+        
+            // نمایش لینک‌های اجتماعی ذخیره‌شده
+            updateSocialLinksDisplay(storedSocials);
+        
+            // افزودن لینک جدید
+            document.getElementById('addSocial').addEventListener('click', function () {
+                const socialLink = prompt("Enter the social link:");
+                if (socialLink) {
+                    storedSocials.push(socialLink);
+                    updateSocialLinksDisplay(storedSocials);
+                }
+            });
+        
+            // ذخیره‌سازی لینک‌ها
+            document.getElementById('saveSocials').addEventListener('click', function () {
+                localStorage.setItem('socialLinks', JSON.stringify(storedSocials));
+                document.getElementById('socialsModal').style.display = 'none';
+            });
+        
+            function updateSocialLinksDisplay(socials) {
+                const socialLinksDiv = document.getElementById('socialLinks');
+                socialLinksDiv.innerHTML = '';
+        
+                if (socials.length === 0) {
+                    socialLinksDiv.innerHTML = '<p>No social links added yet.</p>';
+                } else {
+                    socials.forEach((link, index) => {
+                        const linkElement = document.createElement('p');
+                        linkElement.textContent = `${index + 1}: ${link}`;
+                        socialLinksDiv.appendChild(linkElement);
+                    });
+                }
+            }
+        
+            // مدیریت بستن مدال
+            document.querySelector('.close').addEventListener('click', function () {
+                document.getElementById('socialsModal').style.display = 'none';
+            });
+        });
+        
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const storedGalleryTitle = localStorage.getItem('galleryTitle');
+            const storedGalleryImage = localStorage.getItem('galleryImage');
+        
+            // نمایش عنوان و تصویر ذخیره شده
+            if (storedGalleryTitle) {
+                document.getElementById('galleryTitle').value = storedGalleryTitle;
+            }
+        
+            if (storedGalleryImage) {
+                document.getElementById('imagePreview').src = storedGalleryImage;
+            }
+        
+            // آپلود و پیش‌نمایش تصویر
+            document.getElementById('uploadImage').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('imagePreview').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        
+            // ذخیره‌سازی عنوان و تصویر
+            document.getElementById('saveGallery').addEventListener('click', function () {
+                const galleryTitle = document.getElementById('galleryTitle').value;
+                const galleryImage = document.getElementById('imagePreview').src;
+        
+                localStorage.setItem('galleryTitle', galleryTitle);
+                localStorage.setItem('galleryImage', galleryImage);
+        
+                document.getElementById('galleryModal').style.display = 'none';
+            });
+        
+            // بستن مدال
+            document.querySelector('.close').addEventListener('click', function () {
+                document.getElementById('galleryModal').style.display = 'none';
+            });
+        });
+        
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let storedLinks = JSON.parse(localStorage.getItem('links')) || [];
+        
+            // نمایش لینک‌های ذخیره شده
+            updateLinksDisplay(storedLinks);
+        
+            // افزودن لینک جدید
+            document.getElementById('addLink').addEventListener('click', function () {
+                const newLink = prompt("Enter the link:");
+                if (newLink) {
+                    storedLinks.push(newLink);
+                    updateLinksDisplay(storedLinks);
+                }
+            });
+        
+            // ذخیره‌سازی لینک‌ها
+            document.getElementById('saveLinks').addEventListener('click', function () {
+                localStorage.setItem('links', JSON.stringify(storedLinks));
+                document.getElementById('linksModal').style.display = 'none';
+            });
+        
+            // نمایش لینک‌ها
+            function updateLinksDisplay(links) {
+                const linkListDiv = document.getElementById('linkList');
+                linkListDiv.innerHTML = '';
+        
+                if (links.length === 0) {
+                    linkListDiv.innerHTML = '<p>No link added yet.</p>';
+                } else {
+                    links.forEach((link, index) => {
+                        const linkElement = document.createElement('p');
+                        linkElement.textContent = `${index + 1}: ${link}`;
+                        linkListDiv.appendChild(linkElement);
+                    });
+                }
+            }
+        
+            // بستن مدال
+            document.querySelector('.close').addEventListener('click', function () {
+                document.getElementById('linksModal').style.display = 'none';
+            });
+        });         
+    </script>
+    <script src="script1.js"></script>
+</body>
+</html>

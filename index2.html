@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-step"></div>
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <h1>Create your Profile</h1>
+        <p class="subheading">Enter the information you'll be sharing with others</p>
+        <form id="profileForm">
+            <div class="form-field">
+                <label for="jobTitle">Job Title <span class="required">*</span></label>
+                <input type="text" id="jobTitle" required>
+            </div>
+            <div class="form-field">
+                <label for="company">Company <span class="required">*</span></label>
+                <input type="text" id="company" required>
+            </div>
+            <div class="form-field">
+                <label for="location">Location <span class="required">*</span></label>
+                <input type="text" id="location" required>
+            </div>
+            <button type="submit" class="btn continue-2">Continue</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-step"></div>
+            <div class="progress-step progress-step-active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <h1>Create your Profile</h1>
+        <p class="subheading">Enter the information you'll be sharing with others</p>
+        <form id="profileForm">
+            <div class="form-field">
+                <label for="jobTitle">Job Title <span class="required">*</span></label>
+                <input type="text" id="jobTitle" required>
+            </div>
+            <div class="form-field">
+                <label for="company">Company <span class="required">*</span></label>
+                <input type="text" id="company" required>
+            </div>
+            <div class="form-field">
+                <label for="location">Location <span class="required">*</span></label>
+                <input type="text" id="location" required>
+            </div>
+            <button type="submit" class="btn continue-2">Continue</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const jobTitle = document.getElementById('jobTitle').value;
+            const company = document.getElementById('company').value;
+            const location = document.getElementById('location').value;
+            
+            localStorage.setItem('jobTitle', jobTitle);
+            localStorage.setItem('company', company);
+            localStorage.setItem('location', location);
+            
+            window.location.href = 'index3.html';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,774 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="contacts">Contacts Page</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">wave</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html" data-lang="profile">Profile</a></li>
+                    <li><a href="index8.html" data-lang="contacts">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link" data-lang="analytics">Analytics</a></li>
+                    <li><a href="index11.html" data-lang="settings">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box" data-lang="shareProfile">Share your profile</div>
+            <div class="profile-box" data-lang="contactUs">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="main-top">
+                <div class="main-top-left">
+                    <h1 data-lang="contacts">Contacts</h1>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search" class="search-input">
+                        <div class="dropdown">
+                            <button class="btn dropdown-btn" data-lang="selectDates" onclick="toggleDropdown('date-dropdown')">Select dates</button>
+                            <div id="date-dropdown" class="dropdown-content">
+                                <div class="dropdown-item">This Week</div>
+                                <div class="dropdown-item">Last Week</div>
+                                <div class="dropdown-item">This Month</div>
+                                <div class="dropdown-item">Last Month</div>
+                                <div class="dropdown-item">This Year</div>
+                                <div class="dropdown-item">Last Year</div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn dropdown-btn" data-lang="tag" onclick="toggleDropdown('tag-dropdown')">Tag</button>
+                            <div id="tag-dropdown" class="dropdown-content">
+                                <div class="dropdown-item">No tag found</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-top-right">
+                    <button class="btn" data-lang="tags">Tags</button>
+                    <button class="btn" data-lang="autoTags">Auto Tags</button>
+                    <div class="dropdown">
+                        <button class="btn blue-btn dropdown-btn" data-lang="create" onclick="toggleDropdown('create-dropdown')">Create</button>
+                        <div id="create-dropdown" class="dropdown-content">
+                            <a href="#" class="dropdown-item" data-lang="createContact">Create Contact</a>
+                            <a href="#" class="dropdown-item" data-lang="scanBusinessCard">Scan business card</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-btn" onclick="toggleDropdown('more-dropdown')">...</button>
+                        <div id="more-dropdown" class="dropdown-content">
+                            <a href="#" class="dropdown-item" data-lang="exportCSV">Export as CSV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-center">
+                <div class="contact-add">
+                    <img src="notebook_icon.png" alt="Notebook" class="icon">
+                    <strong data-lang="addFirstContact">Add your first contact</strong>
+                    <img src="bouquet_icon.png" alt="Bouquet" class="icon">
+                    <p data-lang="shareProfileViaEmailSMS">Share your profile via email or SMS to add your first contact.</p>
+                    <div class="contact-options">
+                        <button class="btn" data-lang="shareViaSMS">Share via SMS</button>
+                        <button class="btn" data-lang="shareViaEmail">Share via Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            wave
+            <ul>
+                <li data-lang="shopProducts">Shop Products</li>
+                <li data-lang="pricing">Pricing</li>
+                <li data-lang="faq">FAQ</li>
+                <li onclick="showLegalDetails()" data-lang="legals">Legals</li>
+            </ul>
+            <div id="legal-details" style="display: none;">
+                <ul>
+                    <li data-lang="termsOfUse">Terms of Use</li>
+                    <li data-lang="privacyPolicy">Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com"><img src="1.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com"><img src="2.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="3.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com"><img src="4.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById(id);
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('language');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedLanguage) {
+                applyLanguage(savedLanguage);
+            }
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            }
+        });
+    
+        function applyLanguage(language) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const translationKey = el.getAttribute('data-lang');
+                if (translations[language] && translations[language][translationKey]) {
+                    el.textContent = translations[language][translationKey];
+                }
+            });
+        }
+    
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+        }
+    
+        const translations = {
+            english: {
+                profile: 'Profile',
+                contacts: 'Contacts',
+                analytics: 'Analytics',
+                settings: 'Settings',
+                shareProfile: 'Share your profile',
+                contactUs: 'Contact Us',
+                choosePlan: 'Choose Your Plan',
+                unlockExperience: 'Unlock the full networking experience with upgrade features',
+                monthly: 'Monthly',
+                annually: 'Annually',
+                discount: '17% discount',
+                whatsIncluded: 'What’s included',
+                crmIntegrations: 'CRM Integrations',
+                realTimeAnalytics: 'Real-Time Analytics',
+                calendarIntegration: 'Calendar Integration',
+                accessProContent: 'Access to Pro Content',
+                showcaseTeam: 'Showcase Your Team',
+                contactSales: 'Contact sales to discuss Enterprise plans',
+                cancelAnytime: 'Cancel anytime. Price in USD',
+                shopProducts: 'Shop Products',
+                pricing: 'Pricing',
+                faq: 'FAQ',
+                legals: 'Legals',
+                termsOfUse: 'Terms of Use',
+                privacyPolicy: 'Privacy Policy',
+                firstName: 'First name',
+                lastName: 'Last name',
+                accountEmail: 'Account Email',
+                accountPhone: 'Account Phone',
+                darkMode: 'Dark Mode',
+                language: 'Language',
+                saveChanges: 'Save changes',
+                editProfile: 'Edit Profile',
+                pageViews: 'Page Views',
+                pageClicks: 'Page Clicks',
+                ctr: 'CTR',
+                contactsCollected: 'Contacts Collected'
+            },
+            arabic: {
+                profile: 'الملف الشخصي',
+                contacts: 'جهات الاتصال',
+                analytics: 'التحليلات',
+                settings: 'الإعدادات',
+                shareProfile: 'شارك ملفك الشخصي',
+                contactUs: 'اتصل بنا',
+                choosePlan: 'اختر خطتك',
+                unlockExperience: 'افتح تجربة الشبكات الكاملة بميزات الترقية',
+                monthly: 'شهرياً',
+                annually: 'سنوياً',
+                discount: 'خصم 17%',
+                whatsIncluded: 'ما هو مشمول',
+                crmIntegrations: 'تكاملات CRM',
+                realTimeAnalytics: 'التحليلات في الوقت الحقيقي',
+                calendarIntegration: 'تكامل التقويم',
+                accessProContent: 'الوصول إلى المحتوى الاحترافي',
+                showcaseTeam: 'عرض فريقك',
+                contactSales: 'اتصل بالمبيعات لمناقشة خطط الشركات',
+                cancelAnytime: 'إلغاء في أي وقت. السعر بالدولار الأمريكي',
+                shopProducts: 'تسوق المنتجات',
+                pricing: 'التسعير',
+                faq: 'الأسئلة الشائعة',
+                legals: 'الوثائق القانونية',
+                termsOfUse: 'شروط الاستخدام',
+                privacyPolicy: 'سياسة الخصوصية',
+                firstName: 'الاسم الأول',
+                lastName: 'الاسم الأخير',
+                accountEmail: 'البريد الإلكتروني للحساب',
+                accountPhone: 'هاتف الحساب',
+                darkMode: 'الوضع الداكن',
+                language: 'اللغة',
+                saveChanges: 'حفظ التغييرات',
+                editProfile: 'تعديل الملف الشخصي',
+                pageViews: 'مشاهدات الصفحة',
+                pageClicks: 'نقرات الصفحة',
+                ctr: 'نسبة النقر إلى الظهور',
+                contactsCollected: 'جهات الاتصال التي تم جمعها'
+            },
+            farsi: {
+                profile: 'نمایه',
+                contacts: 'مخاطبین',
+                analytics: 'تجزیه و تحلیل',
+                settings: 'تنظیمات',
+                shareProfile: 'اشتراک گذاری نمایه شما',
+                contactUs: 'تماس با ما',
+                choosePlan: 'طرح خود را انتخاب کنید',
+                unlockExperience: 'با ویژگی‌های ارتقا تجربه کامل شبکه‌سازی را باز کنید',
+                monthly: 'ماهانه',
+                annually: 'سالانه',
+                discount: '17٪ تخفیف',
+                whatsIncluded: 'چه چیزی شامل است',
+                crmIntegrations: 'ادغام‌های CRM',
+                realTimeAnalytics: 'تجزیه و تحلیل در زمان واقعی',
+                calendarIntegration: 'ادغام تقویم',
+                accessProContent: 'دسترسی به محتوای حرفه‌ای',
+                showcaseTeam: 'نمایش تیم شما',
+                contactSales: 'برای بحث در مورد برنامه‌های سازمانی با فروش تماس بگیرید',
+                cancelAnytime: 'لغو در هر زمان. قیمت به دلار آمریکا',
+                shopProducts: 'خرید محصولات',
+                pricing: 'قیمت گذاری',
+                faq: 'سوالات متداول',
+                legals: 'قوانین',
+                termsOfUse: 'شرایط استفاده',
+                privacyPolicy: 'سیاست حفظ حریم خصوصی',
+                firstName: 'نام',
+                lastName: 'نام خانوادگی',
+                accountEmail: 'ایمیل حساب کاربری',
+                accountPhone: 'تلفن حساب کاربری',
+                darkMode: 'حالت تاریک',
+                language: 'زبان',
+                saveChanges: 'ذخیره تغییرات',
+                editProfile: 'ویرایش نمایه',
+                pageViews: 'مشاهدات صفحه',
+                pageClicks: 'کلیک‌های صفحه',
+                ctr: 'نرخ کلیک',
+                contactsCollected: 'مخاطبین جمع آوری شده'
+            }
+        };
+    </script>
+    
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="contacts">Contacts Page</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="header-top-left">wave</div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index7.html" data-lang="profile">Profile</a></li>
+                    <li><a href="index8.html" data-lang="contacts">Contacts</a></li>
+                    <li><a href="index12.html" id="analytics-link" data-lang="analytics">Analytics</a></li>
+                    <li><a href="index11.html" data-lang="settings">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-top-right">
+            <div class="profile-box" data-lang="shareProfile">Share your profile</div>
+            <div class="profile-box" data-lang="contactUs">Contact Us</div>
+            <img id="profile-pic-header" src="profile_picture.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="main-top">
+                <div class="main-top-left">
+                    <h1 data-lang="contacts">Contacts</h1>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search" class="search-input">
+                        <div class="dropdown">
+                            <button class="btn dropdown-btn" data-lang="selectDates" onclick="toggleDropdown('date-dropdown')">Select dates</button>
+                            <div id="date-dropdown" class="dropdown-content">
+                                <div class="dropdown-item">This Week</div>
+                                <div class="dropdown-item">Last Week</div>
+                                <div class="dropdown-item">This Month</div>
+                                <div class="dropdown-item">Last Month</div>
+                                <div class="dropdown-item">This Year</div>
+                                <div class="dropdown-item">Last Year</div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn dropdown-btn" data-lang="tag" onclick="toggleDropdown('tag-dropdown')">Tag</button>
+                            <div id="tag-dropdown" class="dropdown-content">
+                                <div class="dropdown-item">No tag found</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-top-right">
+                    <button class="btn" data-lang="tags">Tags</button>
+                    <button class="btn" data-lang="autoTags">Auto Tags</button>
+                    <div class="dropdown">
+                        <button class="btn blue-btn dropdown-btn" data-lang="create" onclick="toggleDropdown('create-dropdown')">Create</button>
+                        <div id="create-dropdown" class="dropdown-content">
+                            <a href="#" class="dropdown-item" data-lang="createContact">Create Contact</a>
+                            <a href="#" class="dropdown-item" data-lang="scanBusinessCard" onclick="scanBusinessCard()">Scan business card</a>
+                        </div>
+                        <!-- مدال برای اسکن کارت بیزینس -->
+                        <div class="modal" id="scanBusinessCardModal" style="display: none;">
+                            <div class="modal-content">
+                                <span class="close" data-close="scanBusinessCardModal">&times;</span>
+                                <h2>Upload a business card</h2>
+                                <p>Create a contact from a business card image.</p>
+                                <div id="drop-area">
+                                    <input type="file" id="businessCardImage" accept="image/*" style="display: none;">
+                                    <label for="businessCardImage" class="drop-label">
+                                        <img src="image_placeholder.png" alt="Upload Image">
+                                        <p>Drop your image here</p>
+                                    </label>
+                                </div>
+                                <button type="button" id="continueButton" disabled>Continue</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- مدال ساخت مخاطب جدید -->
+                    <div class="modal" id="createContactModal" style="display: none;">
+                        <div class="modal-content">
+                            <span class="close" data-close="createContactModal">&times;</span>
+                            <h2>Create Contact</h2>
+                            <form id="createContactForm">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" id="firstName" name="firstName" required><br><br>
+
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" id="lastName" name="lastName" required><br><br>
+
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email"><br><br>
+
+                                <label for="phone">Phone:</label>
+                                <input type="tel" id="phone" name="phone"><br><br>
+
+                                <label for="location">Location:</label>
+                                <input type="text" id="location" name="location"><br><br>
+
+                                <label for="company">Company:</label>
+                                <input type="text" id="company" name="company"><br><br>
+
+                                <label for="jobTitle">Job Title:</label>
+                                <input type="text" id="jobTitle" name="jobTitle"><br><br>
+
+                                <button type="button" id="saveContact">Save</button>
+                            </form>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-left">
+                                <strong>${contact.firstName} ${contact.lastName}</strong>
+                                <p>${contact.email}</p>
+                            </div>
+                            <div class="contact-right">
+                                <p>${contact.jobTitle} at ${contact.company}</p>
+                                <p>${contact.phone}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="dropdown">
+                        <button class="btn dropdown-btn" onclick="toggleDropdown('more-dropdown')">...</button>
+                        <div id="more-dropdown" class="dropdown-content">
+                            <a href="#" class="dropdown-item" data-lang="exportCSV">Export as CSV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-center">
+                <div class="contact-add">
+                    <img src="notebook_icon.png" alt="Notebook" class="icon">
+                    <strong data-lang="addFirstContact">Add your first contact</strong>
+                    <img src="bouquet_icon.png" alt="Bouquet" class="icon">
+                    <p data-lang="shareProfileViaEmailSMS">Share your profile via email or SMS to add your first contact.</p>
+                    <div class="contact-options">
+                        <button class="btn" data-lang="shareViaSMS">Share via SMS</button>
+                        <button class="btn" data-lang="shareViaEmail">Share via Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // نمایش مدال وقتی روی "Create Contact" کلیک می‌شود
+            document.querySelector('[data-lang="createContact"]').addEventListener('click', function () {
+                document.getElementById('createContactModal').style.display = 'block';
+            });
+        
+            // بستن مدال
+            document.querySelector('.close').addEventListener('click', function () {
+                document.getElementById('createContactModal').style.display = 'none';
+            });
+        
+            // ذخیره اطلاعات مخاطب
+            document.getElementById('saveContact').addEventListener('click', function () {
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const location = document.getElementById('location').value;
+                const company = document.getElementById('company').value;
+                const jobTitle = document.getElementById('jobTitle').value;
+        
+                if (firstName && lastName) {
+                    // ایجاد یک شیء جدید برای مخاطب
+                    const newContact = {
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        location,
+                        company,
+                        jobTitle
+                    };
+        
+                    // افزودن مخاطب جدید به لیست مخاطبین
+                    addContactToList(newContact);
+        
+                    // بستن مدال پس از ذخیره‌سازی
+                    document.getElementById('createContactModal').style.display = 'none';
+                } else {
+                    alert('First Name and Last Name are required.');
+                }
+            });
+        
+            // تابع افزودن مخاطب به لیست
+            function addContactToList(contact) {
+                const contactList = document.querySelector('.main-center');
+                const contactElement = document.createElement('div');
+                contactElement.classList.add('contact-item');
+                contactElement.innerHTML = `
+                    <strong>${contact.firstName} ${contact.lastName}</strong><br>
+                    <small>${contact.jobTitle} at ${contact.company}</small><br>
+                    <small>${contact.email}</small><br>
+                    <small>${contact.phone}</small><br>
+                    <small>${contact.location}</small>
+                `;
+                contactList.appendChild(contactElement);
+            }
+        });
+        
+    </script>
+    <script>
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById(id);
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('language');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedLanguage) {
+                applyLanguage(savedLanguage);
+                document.getElementById('language').value = savedLanguage;
+            }
+            if (savedTheme) {
+                applyTheme(savedTheme);
+                document.getElementById('light-mode').checked = (savedTheme === 'light');
+            }
+        });
+    
+        function applyLanguage(language) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const translationKey = el.getAttribute('data-lang');
+                if (translations[language] && translations[language][translationKey]) {
+                    el.textContent = translations[language][translationKey];
+                }
+            });
+        }
+    
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+        }
+    
+        const translations = {
+            english: {
+                profile: 'Profile',
+                contacts: 'Contacts',
+                analytics: 'Analytics',
+                settings: 'Settings',
+                shareProfile: 'Share your profile',
+                contactUs: 'Contact Us',
+                choosePlan: 'Choose Your Plan',
+                unlockExperience: 'Unlock the full networking experience with upgrade features',
+                monthly: 'Monthly',
+                annually: 'Annually',
+                discount: '17% discount',
+                whatsIncluded: 'What’s included',
+                crmIntegrations: 'CRM Integrations',
+                realTimeAnalytics: 'Real-Time Analytics',
+                calendarIntegration: 'Calendar Integration',
+                accessProContent: 'Access to Pro Content',
+                showcaseTeam: 'Showcase Your Team',
+                contactSales: 'Contact sales to discuss Enterprise plans',
+                cancelAnytime: 'Cancel anytime. Price in USD',
+                shopProducts: 'Shop Products',
+                pricing: 'Pricing',
+                faq: 'FAQ',
+                legals: 'Legals',
+                termsOfUse: 'Terms of Use',
+                privacyPolicy: 'Privacy Policy',
+                firstName: 'First name',
+                lastName: 'Last name',
+                accountEmail: 'Account Email',
+                accountPhone: 'Account Phone',
+                darkMode: 'Dark Mode',
+                language: 'Language',
+                saveChanges: 'Save changes',
+                editProfile: 'Edit Profile',
+                pageViews: 'Page Views',
+                pageClicks: 'Page Clicks',
+                ctr: 'CTR',
+                contactsCollected: 'Contacts Collected'
+            },
+            arabic: {
+                profile: 'الملف الشخصي',
+                contacts: 'جهات الاتصال',
+                analytics: 'التحليلات',
+                settings: 'الإعدادات',
+                shareProfile: 'شارك ملفك الشخصي',
+                contactUs: 'اتصل بنا',
+                choosePlan: 'اختر خطتك',
+                unlockExperience: 'افتح تجربة الشبكات الكاملة بميزات الترقية',
+                monthly: 'شهرياً',
+                annually: 'سنوياً',
+                discount: 'خصم 17%',
+                whatsIncluded: 'ما هو مشمول',
+                crmIntegrations: 'تكاملات CRM',
+                realTimeAnalytics: 'التحليلات في الوقت الحقيقي',
+                calendarIntegration: 'تكامل التقويم',
+                accessProContent: 'الوصول إلى المحتوى الاحترافي',
+                showcaseTeam: 'عرض فريقك',
+                contactSales: 'اتصل بالمبيعات لمناقشة خطط الشركات',
+                cancelAnytime: 'إلغاء في أي وقت. السعر بالدولار الأمريكي',
+                shopProducts: 'تسوق المنتجات',
+                pricing: 'التسعير',
+                faq: 'الأسئلة الشائعة',
+                legals: 'الوثائق القانونية',
+                termsOfUse: 'شروط الاستخدام',
+                privacyPolicy: 'سياسة الخصوصية',
+                firstName: 'الاسم الأول',
+                lastName: 'الاسم الأخير',
+                accountEmail: 'البريد الإلكتروني للحساب',
+                accountPhone: 'هاتف الحساب',
+                darkMode: 'الوضع الداكن',
+                language: 'اللغة',
+                saveChanges: 'حفظ التغييرات',
+                editProfile: 'تعديل الملف الشخصي',
+                pageViews: 'مشاهدات الصفحة',
+                pageClicks: 'نقرات الصفحة',
+                ctr: 'نسبة النقر إلى الظهور',
+                contactsCollected: 'جهات الاتصال التي تم جمعها'
+            },
+            farsi: {
+                profile: 'نمایه',
+                contacts: 'مخاطبین',
+                analytics: 'تجزیه و تحلیل',
+                settings: 'تنظیمات',
+                shareProfile: 'اشتراک گذاری نمایه شما',
+                contactUs: 'تماس با ما',
+                choosePlan: 'طرح خود را انتخاب کنید',
+                unlockExperience: 'با ویژگی‌های ارتقا تجربه کامل شبکه‌سازی را باز کنید',
+                monthly: 'ماهانه',
+                annually: 'سالانه',
+                discount: '17٪ تخفیف',
+                whatsIncluded: 'چه چیزی شامل است',
+                crmIntegrations: 'ادغام‌های CRM',
+                realTimeAnalytics: 'تجزیه و تحلیل در زمان واقعی',
+                calendarIntegration: 'ادغام تقویم',
+                accessProContent: 'دسترسی به محتوای حرفه‌ای',
+                showcaseTeam: 'نمایش تیم شما',
+                contactSales: 'برای بحث در مورد برنامه‌های سازمانی با فروش تماس بگیرید',
+                cancelAnytime: 'لغو در هر زمان. قیمت به دلار آمریکا',
+                shopProducts: 'خرید محصولات',
+                pricing: 'قیمت گذاری',
+                faq: 'سوالات متداول',
+                legals: 'قوانین',
+                termsOfUse: 'شرایط استفاده',
+                privacyPolicy: 'سیاست حفظ حریم خصوصی',
+                firstName: 'نام',
+                lastName: 'نام خانوادگی',
+                accountEmail: 'ایمیل حساب کاربری',
+                accountPhone: 'تلفن حساب کاربری',
+                darkMode: 'حالت تاریک',
+                language: 'زبان',
+                saveChanges: 'ذخیره تغییرات',
+                editProfile: 'ویرایش نمایه',
+                pageViews: 'مشاهدات صفحه',
+                pageClicks: 'کلیک‌های صفحه',
+                ctr: 'نرخ کلیک',
+                contactsCollected: 'مخاطبین جمع آوری شده'
+            }
+        };
+
+        // تابع برای اسکن کارت بیزینس از طریق NFC
+        function scanBusinessCard() {
+            if ('NDEFReader' in window) {
+                const ndef = new NDEFReader();
+                ndef.scan().then(() => {
+                    console.log("NFC scan started successfully.");
+                    ndef.onreading = event => {
+                        const decoder = new TextDecoder();
+                        for (const record of event.message.records) {
+                            const data = decoder.decode(record.data);
+                            processBusinessCardData(data);
+                        }
+                    };
+                }).catch(error => {
+                    console.log(`Error starting NFC scan: ${error}`);
+                });
+            } else {
+                alert("NFC is not supported in this browser.");
+            }
+        }
+
+        // تابع برای پردازش داده‌های کارت بیزینس
+        function processBusinessCardData(data) {
+            // فرض کنید داده‌های کارت شامل footer, randNumber, serial, productCode و header باشند
+            const parsedData = JSON.parse(data);
+            const footer = parseInt(parsedData.footer, 16);
+            const randNumber = parseInt(parsedData.randNumber, 16);
+            const serial = parseInt(parsedData.serial, 16);
+            const productCode = parseInt(parsedData.productCode, 16);
+            const header = parseInt(parsedData.header, 16);
+
+            const xorResult = footer ^ randNumber ^ serial ^ productCode ^ header;
+            const sumResult = footer + randNumber + serial + productCode + header + xorResult;
+
+            // نمایش نتایج
+            alert(`XOR Result: ${xorResult}\nSUM Result: ${sumResult}`);
+        }
+    </script>
+    <script>
+        function addContactToList(contact) {
+            const contactList = document.querySelector('.main-center');
+            const contactElement = document.createElement('div');
+            contactElement.classList.add('contact-item');
+            contactElement.innerHTML = `
+                <div class="contact-left">
+                    <strong>${contact.firstName} ${contact.lastName}</strong>
+                    <p>${contact.email}</p>
+                </div>
+                <div class="contact-right">
+                    <p>${contact.jobTitle} at ${contact.company}</p>
+                    <p>${contact.phone}</p>
+                </div>
+            `;
+            contactList.appendChild(contactElement);
+        }
+        
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // نمایش مدال اسکن کارت بیزینس
+            document.querySelector('[data-lang="scanBusinessCard"]').addEventListener('click', function () {
+                document.getElementById('scanBusinessCardModal').style.display = 'block';
+            });
+        
+            // بستن مدال
+            document.querySelector('.close').addEventListener('click', function () {
+                document.getElementById('scanBusinessCardModal').style.display = 'none';
+            });
+        
+            // آپلود تصویر و فعال کردن دکمه "Continue"
+            const businessCardInput = document.getElementById('businessCardImage');
+            const continueButton = document.getElementById('continueButton');
+        
+            businessCardInput.addEventListener('change', function () {
+                if (businessCardInput.files.length > 0) {
+                    continueButton.disabled = false;
+                    continueButton.classList.add('enabled');
+                }
+            });
+        
+            // بررسی داده‌های کارت بیزینس برای NFC
+            continueButton.addEventListener('click', function () {
+                if (businessCardInput.files.length === 0) {
+                    alert("Please upload a business card image.");
+                    return;
+                }
+        
+                // شبیه‌سازی بررسی NFC (در واقعیت باید داده‌ها پردازش شوند)
+                const isNFCValid = checkNFC(businessCardInput.files[0]);
+        
+                if (isNFCValid) {
+                    alert("Yes");
+                } else {
+                    // نمایش فرم ساخت مخاطب در صورت عدم وجود NFC
+                    alert("No NFC detected. Switching to Create Contact.");
+                    document.getElementById('scanBusinessCardModal').style.display = 'none';
+                    document.getElementById('createContactModal').style.display = 'block'; // مدال ساخت مخاطب نمایش داده می‌شود
+                }
+            });
+        
+            // تابع بررسی NFC (شبیه‌سازی)
+            function checkNFC(file) {
+                // در اینجا می‌توانید بررسی واقعی NFC را پیاده‌سازی کنید.
+                // برای شبیه‌سازی، فرض می‌کنیم که همیشه NFC نامعتبر است.
+                return false; // همیشه "false" برمی‌گرداند که به معنای عدم وجود NFC است.
+            }
+        });
+        
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
